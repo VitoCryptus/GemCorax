@@ -5,15 +5,14 @@
   "license": "MIT",
   "author": "",
   "type": "module",
-  "main": "index.js",
+  "imports": {
+    "#controllers/*": "./src/controllers/*",
+    "#data/*": "./src/data/*",
+    "#server/*": "./src/server/*",
+    "#utils/*": "./src/utils/*"
+  },
   "scripts": {
     "dev": "npx tsx watch ./main.ts"
-  },
-  "paths": {
-    "@controllers": "./src/controllers",
-    "@data": "./src/data",
-    "@server": "./src/server",
-    "@utils": "./src/utils"
   },
   "dependencies": {
     "cors": "^2.8.6",

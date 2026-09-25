@@ -23,12 +23,13 @@ export default class GemDB {
     return [this.client, this.db];
   }
 
-
+  // This function updates the database after a user mints for the first time
   async syncRegister(userdata: User): Promise<void> {
     this.db.collection("users").insertOne(userdata);
     console.log(`User ${userdata.address} is registered`);
   }
 
+  // This function updates the database after a user mints 
   async syncMint(address: string, amount: number): Promise<void> 
   {
     if (amount <= 0) throw new Error("Wrong amount");

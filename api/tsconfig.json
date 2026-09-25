@@ -16,10 +16,10 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "@controllers": ["./src/controllers"],
-      "@data": ["./src/data"],
-      "@server": ["./src/server"],
-      "@utils": ["./src/utils"]
+      "#controllers/*": ["./src/controllers/*"],
+      "#data/*": ["./src/data/*"],
+      "#server/*": ["./src/server/*"],
+      "#utils/*": ["./src/utils/*"]
     },
   },
   "include": [

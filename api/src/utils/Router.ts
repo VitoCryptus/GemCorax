@@ -1,7 +1,7 @@
 import { Router } from "express";
 
 
-export class GemRouter {
+export default class GemRouter {
   router: Router;
   
   constructor() {
