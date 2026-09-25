@@ -1,0 +1,5 @@
+**/*.env
+**/.vscode
+**/.wake
+**/*secret*
+**/node_modules

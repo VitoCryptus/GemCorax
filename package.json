@@ -1,0 +1,24 @@
+{
+  "name": "gem-miner",
+  "workspaces": [
+    "web",
+    "api"
+  ],
+  "version": "0.1.0",
+  "description": "A gem miner mini game for fun.",
+  "keywords": [
+    "gem",
+    "corax",
+    "game"
+  ],
+  "license": "MIT",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev:api": "npm run dev --workspace=api"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6"
+  }
+}
