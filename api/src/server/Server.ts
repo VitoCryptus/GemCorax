@@ -40,10 +40,12 @@ export default class GemServer {
 
   async setupRouter() {
     this.#router = new GemRouter();
-    await this.#router.connectDB();
+    this.#router.plugToServer(this.#app);
+    // await this.#router.connectDB();
     this.#router.configRoutes();
     return this;
   }
+
 
   // async connectDB() {
   //   this.#db = new GemDB();

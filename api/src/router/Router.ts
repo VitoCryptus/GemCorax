@@ -1,8 +1,8 @@
-import { Router } from "express";
-import { MINT } from "./routes.js";
-import { MintController } from "#controllers/MintController.js";
+import { Router, Express } from "express";
+import { HOME, MINE } from "./routes.js";
+import MineController from "#controllers/MineController.js";
+import HomeController from "#controllers/HomeController.js";
 import GemDB from "#data/db/GemDB.js";
-
 
 export default class GemRouter {
   #router: Router;
@@ -18,8 +18,16 @@ export default class GemRouter {
     return this;
   }
 
+  plugToServer(app: Express) {
+    console.log("Plugging to the server");
+    app.use("/", this.#router);
+    return this;
+  }
+
   configRoutes() {
-    this.#post(MINT, MintController.apply(this.#db));
+    // this.#post(MINE, MineController.apply(this.#db));
+    this.#post(MINE, MineController.apply);
+    this.#get(HOME, HomeController.apply);
     return this;
   }
 
