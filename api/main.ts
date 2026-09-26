@@ -1,6 +1,4 @@
-// import GemServer from "./src/server/Server.ts"
-import GemServer from "./src/server/Server.ts";
+import GemServer from "#server/Server.js";
 
 const server: GemServer = new GemServer();
-await server.setupMiddlewares().connectDB();
-server.connectRouter().runServer();
+await server.setupMiddlewares().runServer().setupRouter();

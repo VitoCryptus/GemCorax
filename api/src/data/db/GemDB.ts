@@ -1,6 +1,8 @@
 import { MongoClient, Db } from "mongodb";
-import "dotenv/config";
+import { config } from "dotenv";
+config();
 
+console.log("STR:", process.env.STRING);
 type User = {
   address: string;
   gemBalance: number;
@@ -19,10 +21,21 @@ export default class GemDB {
   async connect(): Promise<[MongoClient, Db]>  {
     this.client = new MongoClient(this.dbString);
     this.db = this.client.db(process.env.DBNAME);
-  
     return [this.client, this.db];
   }
-
+  
+  getDB() {
+    return this.db;
+  }
+  
+  // Upgraded version of sync which uses syncRegister and syncMint
+  async syncUser(userData: User, amount: number) {
+    if (await this.db.collection("users").findOne({address: userData.address})) {
+      this.syncMint(userData.address, amount);
+    } else {
+      this.syncRegister(userData);
+    }
+  }
   // This function updates the database after a user mints for the first time
   async syncRegister(userdata: User): Promise<void> {
     this.db.collection("users").insertOne(userdata);
