@@ -1,12 +1,26 @@
 :root {
-  --bgcolor: "green";
+  --font-color: green;
+  --bg-color: rgb(228, 238, 228);
 }
 
+@font-face {
+  font-family: "Dumbledor";
+  src: url("./fonts/dum1.ttf") format("truetype");
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: var(--bgcolor)
 }
 
+body {
+  color: var(--font-color);
+  background-color: var(--bg-color);
+  font-family: "Dumbledor", cursive, sans-serif;
+}
+
+button {
+  color: var(--font-color);
+  font-family: "Dumbledor", cursive, sans-serif;
+}
