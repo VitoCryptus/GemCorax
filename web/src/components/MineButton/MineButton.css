@@ -1,3 +1,9 @@
+.mine-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
 .mine-button {
   width: 120px;
   height: 120px;
@@ -7,36 +13,54 @@
   justify-content: center;
 
   padding: 0;
-
-  background: transparent;
-  /* border: 3px solid green; */
   border: none;
-  border-radius: 50%;
+  background: transparent;
 
   cursor: pointer;
 
-  transition:
-    transform 100ms ease,
-    filter 100ms ease;
+  transition: transform 100ms ease;
 }
 
 .mine-button img {
   width: 70%;
   height: 70%;
   object-fit: contain;
-
-  transition: transform 100ms ease;
 }
 
 .mine-button:hover {
   transform: scale(1.05);
-  filter: brightness(1.1);
 }
 
 .mine-button:active {
   transform: scale(0.92);
 }
 
-.mine-button:active img {
-  transform: scale(0.85);
+.floating-coin {
+  position: absolute;
+  color: rgb(10, 86, 38);
+  left: 50%;
+  top: 35%;
+
+  font-size: 25px;
+  font-weight: bold;
+
+  pointer-events: none;
+
+  animation: float-coin 700ms ease-out forwards;
+}
+
+@keyframes float-coin {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(0.8);
+  }
+
+  20% {
+    transform: translate(-50%, -5px) scale(1.15);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -60px) scale(1);
+  }
 }
