@@ -1,0 +1,42 @@
+.mine-button {
+  width: 120px;
+  height: 120px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  background: transparent;
+  /* border: 3px solid green; */
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition:
+    transform 100ms ease,
+    filter 100ms ease;
+}
+
+.mine-button img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+
+  transition: transform 100ms ease;
+}
+
+.mine-button:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.mine-button:active {
+  transform: scale(0.92);
+}
+
+.mine-button:active img {
+  transform: scale(0.85);
+}
